@@ -370,7 +370,7 @@ async def media_stream(websocket: WebSocket):
     headers = {"Authorization": f"Bearer {OPENAI_API_KEY}"}
 
     try:
-        async with websockets.connect(url, extra_headers=headers) as openai_ws:
+        async with websockets.connect(url, additional_headers=headers) as openai_ws:
             logger.info(f"[{call_sid}] ✅ OpenAI WebSocket 已连接")
 
             # 配置 OpenAI 会话

@@ -104,7 +104,7 @@ async def openai_websocket_handler(twilio_ws, call_sid: str, instructions: str, 
     logger.info(f"[{call_sid}] 连接 OpenAI Realtime API...")
 
     try:
-        async with websockets.connect(url, extra_headers=headers) as openai_ws:
+        async with websockets.connect(url, additional_headers=headers) as openai_ws:
             logger.info(f"[{call_sid}] ✅ OpenAI WebSocket 已连接")
 
             # 配置 OpenAI 会话
