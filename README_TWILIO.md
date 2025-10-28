@@ -85,7 +85,7 @@ ngrok http 5000
 ### 4. 启动服务
 
 ```bash
-python twilio_openai_agent_quart.py
+python twilio_openai_agent_fastapi.py
 ```
 
 看到以下输出表示启动成功：
@@ -98,6 +98,7 @@ python twilio_openai_agent_quart.py
 🎤 默认语音: alloy
 🌐 公网地址: https://abc123.ngrok-free.app
 ============================================================
+INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
 ```
 
 ### 5. 发起呼叫
@@ -188,7 +189,7 @@ curl -X POST http://localhost:5000/make-call \
        ▼
 ┌─────────────────────────────────┐
 │   Twilio + OpenAI Agent         │
-│  (本服务, Quart + WebSocket)     │
+│  (本服务, FastAPI + WebSocket)   │
 └──────┬─────────────────┬────────┘
        │                 │
        │ Twilio API      │ WebSocket
@@ -243,7 +244,7 @@ print(response.json())
 
 ### 修改语音检测参数
 
-编辑 `twilio_openai_agent_quart.py` 中的 `session_config`：
+编辑 `twilio_openai_agent_fastapi.py` 中的 `session_config`：
 
 ```python
 "turn_detection": {
@@ -303,7 +304,7 @@ print(response.json())
 
 ```bash
 # 查看详细日志
-python twilio_openai_agent_quart.py
+python twilio_openai_agent_fastapi.py
 
 # 检查 WebSocket 连接
 # 应该看到：
@@ -336,7 +337,7 @@ curl https://your-domain.ngrok-free.app/
 
 ```ini
 [program:twilio_agent]
-command=/path/to/venv/bin/python /path/to/twilio_openai_agent_quart.py
+command=/path/to/venv/bin/python /path/to/twilio_openai_agent_fastapi.py
 directory=/path/to/realtime_conversation_agent
 user=www-data
 autostart=true
@@ -357,7 +358,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "twilio_openai_agent_quart.py"]
+CMD ["python", "twilio_openai_agent_fastapi.py"]
 ```
 
 ```bash
@@ -395,7 +396,7 @@ server {
 
 - [Twilio 文档](https://www.twilio.com/docs)
 - [OpenAI Realtime API 文档](https://platform.openai.com/docs/guides/realtime)
-- [Quart 文档](https://quart.palletsprojects.com/)
+- [FastAPI 文档](https://fastapi.tiangolo.com/)
 - [ngrok 文档](https://ngrok.com/docs)
 
 ## 📄 许可证
