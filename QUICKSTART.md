@@ -38,7 +38,7 @@ ngrok http 5000
 ### 步骤 4: 启动服务
 
 ```bash
-python twilio_openai_agent_quart.py
+python twilio_openai_agent_fastapi.py
 ```
 
 看到以下输出表示成功：
@@ -46,6 +46,7 @@ python twilio_openai_agent_quart.py
 🚀 Twilio + OpenAI Realtime Agent 启动中...
 📞 Twilio 号码: +12025551234
 🤖 AI 模型: gpt-realtime
+INFO:     Uvicorn running on http://0.0.0.0:5000
 ```
 
 ### 步骤 5: 发起测试呼叫
@@ -106,7 +107,7 @@ curl http://localhost:5000/
 cat .env | grep -v "^#"
 
 # 3. 查看详细日志
-python twilio_openai_agent_quart.py
+python twilio_openai_agent_fastapi.py
 ```
 
 ### ❌ 音频无声音

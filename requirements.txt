@@ -1,6 +1,11 @@
 # Web 框架
-quart==0.19.4              # 异步 web 框架，支持 WebSocket
-hypercorn==0.16.0          # ASGI 服务器
+fastapi==0.109.0           # 现代异步 web 框架，支持 WebSocket
+uvicorn[standard]==0.27.0  # 高性能 ASGI 服务器
+python-multipart==0.0.6    # 表单数据解析（Twilio 回调需要）
+
+# 可选：Quart 版本（如果需要）
+# quart==0.19.4
+# hypercorn==0.16.0
 
 # Twilio
 twilio==9.0.0              # Twilio SDK
