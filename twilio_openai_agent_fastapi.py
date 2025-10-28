@@ -395,7 +395,8 @@ async def media_stream(websocket: WebSocket):
                         },
                         "output": {
                             "format": {
-                                "type": "audio/pcm"
+                                "type": "audio/pcm",
+                                "rate": 24000
                             },
                             "voice": voice
                         }
