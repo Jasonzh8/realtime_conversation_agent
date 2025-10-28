@@ -30,7 +30,7 @@ async def test_openai_connection():
     headers = {"Authorization": f"Bearer {OPENAI_API_KEY}"}
 
     try:
-        async with websockets.connect(url, extra_headers=headers) as ws:
+        async with websockets.connect(url, additional_headers=headers) as ws:
             print("✅ WebSocket 连接成功")
 
             # 配置会话
@@ -158,7 +158,7 @@ async def test_text_to_speech():
     headers = {"Authorization": f"Bearer {OPENAI_API_KEY}"}
 
     try:
-        async with websockets.connect(url, extra_headers=headers) as ws:
+        async with websockets.connect(url, additional_headers=headers) as ws:
             print("✅ WebSocket 已连接")
 
             # 配置会话
