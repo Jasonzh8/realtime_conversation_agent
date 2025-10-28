@@ -40,9 +40,7 @@ async def test_openai_connection():
                     "type": "realtime",
                     "model": OPENAI_MODEL,
                     "instructions": "你是一个测试助手，简短回复即可。",
-                    "voice": "alloy",
-                    "input_audio_format": "pcm16",
-                    "output_audio_format": "pcm16",
+                    "modalities": ["text"],  # 测试模式只使用文本
                 }
             }
 
