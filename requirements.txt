@@ -1,0 +1,15 @@
+# Web 框架
+quart==0.19.4              # 异步 web 框架，支持 WebSocket
+hypercorn==0.16.0          # ASGI 服务器
+
+# Twilio
+twilio==9.0.0              # Twilio SDK
+
+# WebSocket 客户端
+websockets==12.0           # WebSocket 客户端库
+
+# 环境变量
+python-dotenv==1.0.0       # 加载 .env 文件
+
+# HTTP 请求（可选，用于调试）
+httpx==0.26.0              # 异步 HTTP 客户端
